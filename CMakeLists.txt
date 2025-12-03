@@ -13,7 +13,7 @@ project(cptb
 )
 
 if (NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
+    set(CMAKE_BUILD_TYPE Debug)
 endif()
 
 # ===== C++ Standard =====
@@ -34,6 +34,10 @@ if (PROJ_ENABLE_WARNINGS)
     include(ConfigWarnings OPTIONAL)
 endif()
 
+# ===== Print Info =====
+include(PlatformDetect)
+proj_print_platform_summary()
+
 # ===== Subdirectories =====
 add_subdirectory(src)
 
@@ -49,7 +53,6 @@ endif()
 if (PROJ_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
-
 
 
 
