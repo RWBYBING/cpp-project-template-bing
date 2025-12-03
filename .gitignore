@@ -92,3 +92,9 @@ __pycache__/
 Thumbs.db
 ehthumbs.db
 
+# ----- External files -----
+assets/
+*.obj
+*.jpg
+*.png
+*.txt
