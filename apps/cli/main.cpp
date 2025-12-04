@@ -15,6 +15,9 @@ int main()
 {
     api::logging::Config cfg;
     api::logging::Init(cfg);
+    api::logging::SetLevel(api::logging::LogLevel::Info);
+
+    
 
     return 0;
 }
