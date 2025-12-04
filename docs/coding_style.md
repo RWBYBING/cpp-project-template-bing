@@ -59,10 +59,10 @@ enum class LogLevel;
 ```
 
 ### 2.3 Functions
-Use **camelCase**
+Use **PascalCase**
 ``` cpp
-std::string makeWelcomeMessage(const std::string& userName);
-void updateFrame(double deltaTime);
+std::string MakeWelcomeMessage(const std::string& userName);
+void UpdateFrame(double deltaTime);
 ```
 
 ### 2.4 Variables

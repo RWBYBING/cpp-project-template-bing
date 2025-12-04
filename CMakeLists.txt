@@ -20,6 +20,7 @@ endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # ===== Options =====
 option(PROJ_BUILD_APPS "Build application targets in apps/" ON)
@@ -34,9 +35,10 @@ if (PROJ_ENABLE_WARNINGS)
     include(ConfigWarnings OPTIONAL)
 endif()
 
-# ===== Print Info =====
 include(PlatformDetect)
 proj_print_platform_summary()
+
+include(FetchSpdlog)
 
 # ===== Subdirectories =====
 add_subdirectory(src)

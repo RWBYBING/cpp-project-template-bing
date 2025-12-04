@@ -16,7 +16,65 @@ target_sources(infra
 
 target_include_directories(infra
     PUBLIC 
-        ${PROJ_INCLUDE_DIR}
+        ${PROJ_INCLUDE_DIR}/infra
 )
 
+# spdlog
+proj_fetch_spdlog()
+target_link_libraries(infra 
+    PUBLIC 
+        spdlog::spdlog_header_only
+)
+
+
 # ===== platform =====
+add_library(platform)
+
+target_sources(platform
+    PRIVATE 
+        platform/temp.cpp
+)
+
+target_include_directories(platform
+    PUBLIC 
+        ${PROJ_INCLUDE_DIR}/platform
+)
+
+# ===== domain =====
+add_library(domain)
+
+target_sources(domain
+    PRIVATE 
+        domain/temp.cpp
+)
+
+target_include_directories(domain
+    PUBLIC 
+        ${PROJ_INCLUDE_DIR}/domain
+)
+
+target_link_libraries(domain
+    PUBLIC 
+        infra 
+        platform
+)
+
+# ===== public api =====
+add_library(api)
+
+target_sources(api 
+    PRIVATE 
+        api/log.cpp 
+)
+
+target_include_directories(api 
+    PUBLIC 
+        ${PROJ_INCLUDE_DIR}/api
+)
+
+target_link_libraries(api 
+    PUBLIC 
+        domain
+        infra 
+)
+
