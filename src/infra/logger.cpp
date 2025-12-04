@@ -23,7 +23,7 @@ void Logger::Init(const std::string& logger_name,
     if (enable_console)
     {
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
-        console_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] %v");
+        console_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v");
         sinks.push_back(console_sink);
     }
 
@@ -32,7 +32,7 @@ void Logger::Init(const std::string& logger_name,
         auto file_sink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>(
             log_file_path, max_file_size, max_files
         );
-        file_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] %v");
+        file_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v");
         sinks.push_back(file_sink);
     }
 
@@ -40,7 +40,7 @@ void Logger::Init(const std::string& logger_name,
     if (sinks.empty())
     {
         auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
-        console_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] %v");
+        console_sink->set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v");
         sinks.push_back(console_sink);
     }
 
@@ -49,7 +49,7 @@ void Logger::Init(const std::string& logger_name,
     logger->flush_on(spdlog::level::warn);
 
     spdlog::set_default_logger(logger);
-    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%n] [%^%l%$] %v");
+    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v");
     
     logger_ = std::move(logger);
 }

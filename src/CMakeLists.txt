@@ -64,7 +64,8 @@ add_library(api)
 
 target_sources(api 
     PRIVATE 
-        api/log.cpp 
+        api/log.cpp
+        api/test.cpp 
 )
 
 target_include_directories(api 

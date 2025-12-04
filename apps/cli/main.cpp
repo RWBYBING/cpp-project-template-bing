@@ -10,6 +10,9 @@
  */
 
 #include <api/log.h>
+#include <api/test.h>
+
+#include <iostream>
 
 int main()
 {
@@ -17,7 +20,16 @@ int main()
     api::logging::Init(cfg);
     api::logging::SetLevel(api::logging::LogLevel::Info);
 
-    
+    api::logging::SetGuiCallback(
+        [](std::string_view text)
+        {
+            std::cout << "Callback: " << text << std::endl;
+        }
+    );
+
+    api::logging::Info("Log from apps!");
+
+    api::test::LogFromBackend();
 
     return 0;
 }

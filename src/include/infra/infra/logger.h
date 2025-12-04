@@ -169,11 +169,11 @@ namespace Infra
         mutable std::mutex cbMutex_;
     };
 
-    #define LOG_TRACE(...)          ::infra::Logger::Instance().Trace(__VA_ARGS__)
-    #define LOG_DEBUG(...)          ::infra::Logger::Instance().Debug(__VA_ARGS__)
-    #define LOG_INFO(...)           ::infra::Logger::Instance().Info(__VA_ARGS__)
-    #define LOG_WARN(...)           ::infra::Logger::Instance().Warn(__VA_ARGS__)
-    #define LOG_ERROR(...)          ::infra::Logger::Instance().Error(__VA_ARGS__)
-    #define LOG_CRITICAL(...)       ::infra::Logger::Instance().Critical(__VA_ARGS__)
+    #define LOG_TRACE(...)          ::Infra::Logger::Instance().Trace(__VA_ARGS__)
+    #define LOG_DEBUG(...)          ::Infra::Logger::Instance().Debug(__VA_ARGS__)
+    #define LOG_INFO(...)           ::Infra::Logger::Instance().Info(__VA_ARGS__)
+    #define LOG_WARN(...)           ::Infra::Logger::Instance().Warn(__VA_ARGS__)
+    #define LOG_ERROR(...)          ::Infra::Logger::Instance().Error(__VA_ARGS__)
+    #define LOG_CRITICAL(...)       ::Infra::Logger::Instance().Critical(__VA_ARGS__)
 
 }
